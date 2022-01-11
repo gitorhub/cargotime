@@ -1,0 +1,30 @@
+#cargo-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+#cargo-wrapper>* {
+    padding-right: 5px;
+    width: 100%;
+}
+.cargo-times {
+    display: flex;
+}
+.cargo-times>* {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cargo-times span {
+    display: none;
+}
+.cargo-message {
+    display: flex;
+    flex-wrap: wrap;
+}
+.col {
+    padding: 0 5px;
+}
+.d-none {
+    display: none;
+}
