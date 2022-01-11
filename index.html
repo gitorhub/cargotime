@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #cargo-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #cargo-wrapper>* {
+            padding-right: 5px;
+            width: 100%;
+        }
+        .cargo-times {
+            display: flex;
+        }
+        .cargo-times>* {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .cargo-times span {
+            display: none;
+        }
+        .cargo-message {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .col {
+            padding: 0 5px;
+        }
+        .d-none {
+            display: none;
+        }
+    </style>
+    <h1>cargo time</h1>
+    <div id="cargo-wrapper">
+    </div>
+    <script src="main.js"></script>
+<!-- 
+    target: o gün saat kaça kadar olan ürünler kargoda. Ör:15 ise, O gün saat 15 'e kadar olan ürünler için geri sayım yapılacak demektir.
+    incarCago: 0 aynı gün kargoda demektir. 1 yarın, 2 ve üzeri ise 2 gün ve sonrası demektir. tarih yazar.
+
+    hedef saatten gece 24'e kadar gün devam ettiğinden dolayı o alanların sağlıklı çalışabilmesi için aşağıdaki alanlar eklenmiştir. else ile başlayan aşağıdaki ifadeler 
+    Heden saatten gece 12'ye kadar olan zamanları kapsamaktadır. 
+
+    elseDay: saat 15ten sonra ise bir sonraki geri sayım hedefi günüdür. 1 ertesi gün demektir. 
+    elseTarget: saat 15'ten sonra ise sonraki hedef saati belirtir. Yani elseDay 1 ve elseTarget:15 ise yarın 15'e kadar geri sayım olacak demektir.
+    elseCargo: saat 15ten sonra ise sonraki Kargo teslim zamanını belirtir. 1 yarın demektir.  Yani elseDay 1 ve elseTarget:15 ise ve elseCargo 1 ise yarın 15'e kadar olan siparişlerde karkargo yarın demektir.
+
+
+
+
+ -->
+    
+    <script>
+setTimeout(() => {
+		countDown.init(document.querySelector("#cargo-wrapper"), {
+            1: {target: 15, inCargo: 0,  elseDay:1,elseTarget: 15, elseCargo:1}, // pazartesi
+			2: {target: 15, inCargo: 0,  elseDay:1,elseTarget: 15, elseCargo:1}, // sali
+			3: {target: 15, inCargo: 0,  elseDay:1,elseTarget: 15, elseCargo:1}, //çarşamba
+			4: {target: 15, inCargo: 0,  elseDay:1,elseTarget: 15, elseCargo:1}, // perşembe
+			5: {target: 15, inCargo: 0,  elseDay:1,elseTarget: 15, elseCargo:1}, //cuma
+			6: {target: 12, inCargo: null,  elseDay:2,elseTarget: 15, elseCargo:2}, // cumartesi
+			0: {target: null, inCargo: null,  elseDay:1,elseTarget: 15, elseCargo:1} // pazar
+		})
+	}, 100);
+    
+    </script>
+</body>
+</html>
+
