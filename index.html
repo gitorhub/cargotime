@@ -11,8 +11,8 @@
     <div id="cargo-wrapper"> </div>
     <script src="assets/js/main.js"></script>
     <script>
-setTimeout(() => {
-		countDown.init(document.querySelector("#cargo-wrapper"), {
+
+document.addEventListener("DOMContentLoaded", countDown.init(document.querySelector("#cargo-wrapper"), {
             1: {target: 15, inCargo: 0,  elseDay:1,elseTarget: 15, elseCargo:1}, // pazartesi
 			2: {target: 15, inCargo: 0,  elseDay:1,elseTarget: 15, elseCargo:1}, // sali
 			3: {target: 15, inCargo: 0,  elseDay:1,elseTarget: 15, elseCargo:1}, //çarşamba
@@ -20,8 +20,8 @@ setTimeout(() => {
 			5: {target: 15, inCargo: 0,  elseDay:1,elseTarget: 15, elseCargo:1}, //cuma
 			6: {target: 12, inCargo: null,  elseDay:2,elseTarget: 15, elseCargo:2}, // cumartesi
 			0: {target: null, inCargo: null,  elseDay:1,elseTarget: 15, elseCargo:1} // pazar
-		})
-	}, 100);
+		}))
+
     </script>
 </body>
 </html>
