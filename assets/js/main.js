@@ -63,7 +63,7 @@
 				target = zeroDay +
 					(this.opt[realDay].elseTarget) * 60 * 60 * 1000 +
 					this.opt[realDay].elseDay * 24 * 60 * 60 * 1000;
-					cargoMessage=this.whenCargo(this.opt[realDay].inCargo, cargoTime)
+					cargoMessage=this.whenCargo(this.opt[realDay].elseCargo, cargoTime)
 			}
 			countDown.showResult(elem, new Date(target), cargoMessage)
 		},
@@ -84,10 +84,10 @@
 					seconds = Math.floor(amount % (1e3 * 60) / 1e3);
 				element.innerHTML = `
 			    <div class="cargo-times">
-					<div class="cargo-day ${days?"":"d-none"}">${days} <span>Gün</span>  </div>
-					<div class="cargo-hour">${days?":":""}${pad(hours)} <span>Saat</span></div>
-					<div class="cargo-minute">:${pad(minutes)} <span>Dakika</span></div>
-					<div class="cargo-second">:${pad(seconds)} <span>Saniye</span></div>
+					<div class="cargo-day ${days?"":"d-none"}">${days} <span class="infos">Gün</span>  </div>
+					<div class="cargo-hour">${days?'<span class="colon">:</span>':""}${pad(hours)} <span class="infos">Saat</span></div>
+					<div class="cargo-minute"><span class="colon">:</span>${pad(minutes)} <span class="infos">Dakika</span></div>
+					<div class="cargo-second"><span class="colon">:</span>${pad(seconds)} <span class="infos">Saniye</span></div>
 					<div class="col"> içinde sipariş verirseniz </div>
 				</div>
 				<div class="cargo-message">
@@ -98,4 +98,3 @@
 			}, 1e3)
 		}
 	};
-

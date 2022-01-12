@@ -1,3 +1,6 @@
+h1{
+    text-align: center;
+}
 #cargo-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -5,23 +8,36 @@
 #cargo-wrapper>* {
     padding-right: 5px;
     width: 100%;
+    justify-content: center;
+    text-align: center;
 }
 .cargo-times {
     display: flex;
 }
 .cargo-times>* {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
+    font-size: 20px;
 }
-.cargo-times span {
+.cargo-times span.infos {
     display: none;
+}
+.cargo-times span.colon {
+    /* display: none; */
 }
 .cargo-message {
     display: flex;
     flex-wrap: wrap;
+    font-size: 18px;
+    font-weight: bold;
 }
+.in-cargo{
+    color: green;
+    text-decoration: underline;
+}
+
 .col {
     padding: 0 5px;
 }
