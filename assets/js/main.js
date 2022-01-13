@@ -36,13 +36,15 @@
 		},
 		whenCargo(cargoDay, time=null){
 			let message="";
-			if (cargoDay == 0){
+	        if (cargoDay == 0){
 				message="Bugün";
 			}else if(cargoDay==1){
 				message="Yarın"
+			}else if(new Date(time).getDay()==1){
+				message="Pazartesi"
 			}else{
 				message=convertTimes(time) + " tarihinde ";
-			}
+						}
 			return message;
 		},
 		init(elem, options) {
